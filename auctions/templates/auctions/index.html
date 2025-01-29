@@ -1,0 +1,36 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<div class="container-lg">
+  <h3>Active Listings</h3>
+  <div class="row g-3 justify-content-md-center" data-masonry='{"percentPosition": true }'>
+
+    {% for item in items %}
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="{% url 'item_view' item.id %}" class="text-decoration-none">
+          <div class="card pb-2">
+            <div class="embed-resonsive embed-responsive16by9">
+              {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="Item" class="card-img-top" width="100%" role="img">
+              {% elif item.image %} 
+                 <img src="{{ item.image.url }}" alt="Item" class="card-img-top" width="100%" role="img">
+              {% endif %}
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.name }}</h5>
+                  <p class="fs-6 fw-light">{{ item.description|truncatechars:100 }}</p>
+                  <h5 class="card-text">${{ item.leading_bid }}</h5>
+                </div>
+            </div>
+            
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+{% endblock %}

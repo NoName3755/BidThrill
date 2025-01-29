@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="container-lg">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-6 col-xl-4">
+            <div class="card">
+                <div class="card-body py-4">
+                    <h2 class="text-center">Login</h2>
+                    <form action="{% url 'login' %}" method="post" class="mt-3 p-2">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="inputUsername" class="form-label">Username</label>
+                            <input autofocus type="text" class="form-control" id="inputUsername" name="username" placeholder="Username" required="">
+                        
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" required="">
+                        </div>
+    
+                        
+                        {% if message %}
+                            <div class="text-danger">{{ message }}</div>
+                        {% endif %}
+        
+                        <button type="submit" class="btn btn-primary px-3 my-3">Login</button>
+                        
+                    </form>
+                    Don't have an account? 
+                    <a 
+                        class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover" 
+                        href="{% url 'register' %}"><strong>Register here</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+{% endblock %}

@@ -1,0 +1,48 @@
+body {
+    padding-top: 80px;
+    background-color: #F5F5F5;
+}
+
+textarea {
+    resize: None;
+    height: 124px;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+.btn-no-design {
+    border: none;
+    background: none;
+}
+
+.nav-link:hover, .list-group-item:hover, .card-title:hover, .lnk:hover {
+    text-decoration: underline;
+}
+
+.card img {
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.item-view-img {
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.btn-custom {
+    background-color: #585757;
+    color: #F5F5F5;
+}
+
+.btn-custom:hover {
+    color: #F5F5F5;
+    background-color: #424242;
+}
+
+.btn-no-decoration {
+    background-color: none;
+    border: none;
+
+}
