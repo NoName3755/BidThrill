@@ -1,0 +1,2 @@
+# BidThrill
+Ecommerce Platform
